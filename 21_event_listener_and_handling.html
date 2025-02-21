@@ -1,0 +1,109 @@
+<!-- Events are actions that occur when users interact with a webpage—like clicks, key presses, form submissions, or mouse movements. 
+ JavaScript uses event listeners to detect and respond to these interactions. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <title>Document</title>
+ </head>
+ <body>
+    <button id="example1">click me!</button>
+
+    <div id="example2" style="width: 200px; height: 100px; background: lightblue;"> Hover me! </div>
+
+    <input type="text" id="example3" placeholder="type here">
+
+    <form id="example4">
+        <input id="username" type="text" name="name" placeholder="name">
+        <input type="submit" value="submit">
+    </form>
+
+    <button id="example5">example of remove listener</button>
+
+    <button id="example6">example of event object</button>
+
+    <div id="parent" style="padding: 30px; background-color: lightcoral;">
+        Parent
+        <button id="child" style="margin: 10px;">Child Button</button>
+    </div>
+
+    <ul id="example7">
+        <li>item1</li>
+        <li>item2</li>
+        <div>hello</div>
+        <li>item3</li>
+    </ul>
+ </body>
+ <script>
+    // Event Listener : an event listeener is the method that listen the  specific event and execute the callback function.
+    // element.addEventListener("event", callbackFunction);
+    // callbackFunction : a function that runs when the event occurs.
+    // event : the name of the event.
+
+    //     Event	            Description
+    // click	            User clicks an element
+    // dblclick	        User double-clicks an element
+    // mouseenter	        Mouse enters an element
+    // mouseleave	        Mouse leaves an element
+    // keydown	            Key is pressed
+    // keyup	            Key is released
+    // input	            User inputs text
+    // submit	            Form is submitted
+
+    // 1.1 click event
+    document.getElementById("example1").addEventListener("click", function(){
+        alert("button clicked");
+    });
+
+    // 1.2 mouse event(hover)
+    let box = document.getElementById("example2");
+
+    box.addEventListener("mouseenter", () => {
+        box.style.backgroundColor = "green";
+    });
+
+    box.addEventListener("mouseleave", () => {
+        box.style.backgroundColor = "lightblue";
+    });
+
+    // 1.3 keyboard event
+    document.getElementById("example3").addEventListener("input", () =>{
+        console.log(`key pressed: ${event.data}`);
+    });
+
+    // 1.4 form submit event
+    document.getElementById("example4").addEventListener("submit", (event) =>{
+        event.preventDefault(); // prevent the form from reffreshing the page.
+        let username = document.getElementById("username").value;
+        alert("form submitted");
+        console.log(`username: ${username}`);
+    })
+
+    // 1.5 remove event listener
+    function clickEvent(){
+        console.log("hello!");
+    }
+    let but = document.getElementById("example5");
+    but.addEventListener("click", clickEvent);
+    setTimeout(() => {
+        but.removeEventListener("click", clickEvent);
+        console.log("event listener removed");
+    }, 10000);
+
+    // 1.6 event object
+    document.getElementById("example6").addEventListener("click", (event) =>{
+        console.log(event); // event object
+        console.log(event.type); // type of event
+        console.log(event.target); // element that triggered the event
+        console.log(event.timeStamp); // time when the event was triggered
+        console.log(event.clientX, event.clientY); // mouse position
+    });
+
+    // 1.7 event delegation : event delegation is a technique to add a single event listener to a parent element that will fire for all children.
+    document.getElementById("example7").addEventListener("click", () =>{
+        if (event.target.tagName === "LI"){
+            console.log(`you clicked : ${event.target.tagName}`);
+        }
+    })
+ </script>
+ </html>

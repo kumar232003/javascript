@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearall()">click to clear console.</button>
+</body>
+<script>
+    // console methods: the console object provides various methods to log, debug, and analyze code execution.
+    
+    // basic console methods:
+    // 1. console.log(): writes a message to the console.
+    console.log('Hello World!');
+    console.log(123);
+    let name = "aditya kumar";
+    console.log(`my name is ${name}`);
+
+    // 2. console.error(): writes an error message to the console.
+    console.error('This is an error message');
+
+    // 3. console.warn(): writes a warning message to the console.
+    console.warn('This is a warning message');
+
+    // debugging:
+    // 1. console.info(): writes an informational message to the console.
+    console.info('This is an informational message');
+
+    // 2. console.debug(): writes a debug message to the console.
+    console.debug('This is a debug message'); // this method is not supported in all browsers.
+
+    // data formating and styling:
+    // 1. console.table(): displays tabular data as a table.
+    let users = [
+    { id: 1, name: "Aditya", age: 22 },
+    { id: 2, name: "ayushman", age: 21 }
+    ];
+    console.table(users);
+
+    // 2. console.dir(): displays an interactive list of the properties of the specified JavaScript object.
+    let person = { name: "Aditya", age: 25, job: "Developer" };
+    console.dir(person);
+
+    // 3. console.group() and console.groupEnd(): groups messages together.
+    console.group('Group 1');
+    console.log('Hello');
+    console.log('World');
+    console.log('!');
+    console.groupEnd('Group 1');
+
+    // 4. console.count(): logs the number of times that this particular call to count() has been called.
+    for (let i = 0; i < 5; i++){
+        console.count('Count');
+    }
+
+    // performance monitoring:
+    // 1. console.time() and console.timeEnd(): starts a timer that you can use to track how long an operation takes.
+    console.time("Loop Time");
+    for (let i = 0; i < 100000; i++) {
+        // some code
+    }
+    console.timeEnd("Loop Time");
+
+    //  Assertions & Clearing
+    // 1. console.assert(): writes an error message to the console if the assertion is false.
+    console.assert(5 > 4, '5 is not greater than 4');
+    console.assert(4 > 5, '4 is not greater than 5');
+
+    // 2. console.clear(): clears the console.
+    function clearall(){
+        console.clear();
+    }
+
+</script>
+</html>

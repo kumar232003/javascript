@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .style1{
+            color: blue;
+            font-size: 20px;
+        }
+
+        .style2{
+            color: green;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <p id="example1">hello workd</p>
+    <button onclick="change1()">click to change with textContent method.</button>
+
+    <p id="example2">example of innerText</p>
+    <p id="example21" style="display: none;">another example of innerText with display none</p>
+
+    <p id="example3">Hello <strong>World!</strong></p>
+    <button onclick="change2()">click to change the new element in this element dynamically</button>
+
+    <h3>example of setAttribute</h3>
+    <img src="image/image1.jpg" alt="image1" id="example4">
+    <button onclick="change3()"> click to change image</button>
+    <button onclick="change4()"> click to remove imgae</button>
+
+    <p id="example5">hello world</p>
+    <button onclick="change5()">click to change color.</button>
+
+    <p id="example6">hello world</p>
+    <button onclick="change6()">click to add a class for style</button>
+    <button onclick="change7()">click to remove the class</button>
+    <button onclick="change8()">click to toggle the class</button>
+    <button onclick="change9()">click to replace the class</button>
+
+    <div id="example7"></div>
+    <button onclick="change10()">click to add new element</button>
+    <button onclick="change12()">click to remove the first element</button>
+    <div id="example8">remove me</div>
+    <button onclick="change11()">click to remove the above element</button>
+
+    <p id="example9">hello <b>world</b></p>
+    <button onclick="change13()">click to change child element</button>
+</body>
+<script>
+    // after selecting an element you can change its attributes dynamically using java script.
+    // 1. modifying text content.
+    // 1.1 textContent : return plain text without HTML tags and also return the text hidden by CSS.
+    function change1(){
+        let text1 = document.getElementById("example1");
+        text1.textContent = "this change is done with textContent method.";
+    }
+    // 1.2 innerText : display the visible text of an element, do not return the text hidden by the CSS.
+    console.log(document.getElementById("example2").innerText); // return Hello World!
+    console.log(document.getElementById("example21").innerText); // return nothing because the element is hidden.
+
+    // 1.3 innerHTML : display the HTML content inside an element, returnt the text with html tag included. also allow to insert html element in an element.
+    let text4 = document.getElementById("example3").innerHTML;
+    console.log(text4);
+    function change2(){
+        let text5 = document.getElementById("example3");
+        text5.innerHTML = "Hello <strong>World! this is the new text.</strong>";
+    }
+
+    // 2. changing attributes. You can change element attributes (like src, href, alt, etc.).
+    // 2.1 setAttribute(name, value) : set the value of an attribute of an element.
+    function change3(){
+        let img1 = document.getElementById("example4");
+        img1.setAttribute("src", "image/image2.jpg");
+    }
+
+    // 2.2 getAttribute(name) : get the value of an attribute of an element.
+    let img2 = document.getElementById("example4");
+    console.log(img2.getAttribute("src"));
+
+    // 2.3 removeAttribute(name) : remove the attribute of an element.
+    function change4(){
+        let img2 = document.getElementById("example4");
+        img2.removeAttribute("src");
+    }
+
+    // 2.4 hasAttribute(name) : check if an element has a specific attribute.
+    console.log(img2.hasAttribute("src")); 
+    console.log(img2.hasAttribute("herf"));
+
+    // 3 modifying css style.
+    // 3.1 element.style.property = new style : change the style of an element.
+    function change5(){
+        let text6 = document.getElementById("example5");
+        text6.style.color = "red";
+    }
+
+    // 3.2 element.classLis.add("class") : add a class to an element.
+    function change6(){
+        let text7 = document.getElementById("example6");
+        text7.classList.add("style1");
+    }
+
+    // 3.3 element.classList.remove("class") : remove a class form an element.
+    function change7(){
+        let text8 = document.getElementById("example6");
+        text8.classList.remove("style1");
+    }
+
+    // 3.4 element.classList.toggle("class") : toggle between adding and removing a class from an element. 
+    // means if the class is present then remove it and if the class is not present then add it.
+    function change8(){
+        let text9 = document.getElementById("example6");
+        text9.classList.toggle("style1");
+    }
+
+    // 3.5 element.classList.contains("class") : check if an element contains a specific class.
+    let text10 = document.getElementById("example6");
+    console.log(text10.classList.contains("style1"));
+
+    // 3.6 element.classList.replace("old class", "new class") : replace a class with another class.
+    function change9(){
+        let text11 = document.getElementById("example6");
+        text11.classList.replace("style1", "style2");
+    }
+
+    // 4 adding and removing elements.
+    // 4.1 document.createElement(tagName) : creat an HTML element.
+    function change10(){
+        document.getElementById("example7");
+        let newElement = document.createElement("p");
+        newElement.textContent = "this is a new element";
+        example7.appendChild(newElement); // append the new element to the parent element.
+    }
+
+    // 4.2 element.removeChild(node) : remove a child node from an element.
+    function change12(){
+        let parentElement = document.getElementById("example7");
+        let childElement = document.getElementById("example7").firstChild; // insted of this we can use parentElement.lastChild or parentElement.children[0]
+        parentElement.removeChild(childElement2);
+    }
+
+    // 4.3 element.remove(): remove an HTML element.
+    function change11(){
+        let thisElement = document.getElementById("example8");
+        thisElement.remove();
+    }
+
+    // 4.4 element.replaceChild(newNode, oldNode) : replace a child node with a new node.
+    function change13(){
+        let parentElement2 = document.getElementById("example9");
+        let oldNode = parentElement2.children[0];
+        let newNode = document.createElement("i");
+        newNode.textContent = "world";
+        parentElement2.replaceChild(newNode, oldNode);
+    }
+
+    // 4.5 element.cloneNode() : clone an HTML element.
+    // 4.6 element.appendChild(node) : append a child node to an element.
+    // 4.7 element.insertBefore(newNode, existingNode) : insert a new node before an existing node.
+    // 4.8 element.prepend(node) : insert a node at the beginning of an element.
+</script>
+</html>

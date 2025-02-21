@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <title>Document</title>
+ </head>
+ <body>
+    <p id="message">hello world!</p>
+    <p class="text">para 1</p>
+    <p class="text">para 2</p>
+    <p class="text">para 3</p>
+    <div>div 1</div>
+    <div>div 2</div>
+ </body>
+ <script>
+// DOM manipulation : Document Object Model(DOM) allow javascript to intract with and modify HTML element dynamically. -->
+// For intract with and modify HTML element we have to select element first.
+
+// Js provide several methods to select element from DOM.
+// 1. getElementById : select by ID, return single element because ID is unique.
+    let elem = document.getElementById("message");
+    console.log(elem); // <p id="message">hello world!</p>
+    console.log(elem.textContent); // hello world! print only the test inside the element
+
+// 2. getElementsByClassName : select by class name, return the collection of element you need to loop through it.
+    let elem2 = document.getElementsByClassName("text");
+    console.log(elem2);
+    console.log(elem2[0].textContent);
+
+// 3. getElementsByTagName : select by tag name, return all the element of the specific tag.
+    let elem3 = document.getElementsByTagName("div");
+    console.log(elem3);
+    console.log(elem3[1].textContent);
+
+// 4. querySelector : select by first matching element. select one element by class, ID and tag.
+    let elem4 = document.querySelector(".text");
+    console.log(elem4.textContent);
+
+// 5. querySelectorAll : select all matching element.
+    let elem5 = document.querySelectorAll(".text");
+    for (let i of elem5){
+        console.log(i.textContent);
+    }
+ </script>
+ </html>

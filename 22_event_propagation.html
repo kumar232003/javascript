@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="grandparent" style="padding:30px; background-color: lightcoral;">
+        Grandparent
+        <div id="parent" style="padding:20px; background-color: lightgreen;">
+          Parent
+            <div id="child" style="padding:10px; background-color: lightblue;">
+            Child
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // event propagation : Event propagation determines the order in which events are captured and bubbled through the DOM.
+    // 1. Capturing phase : the event goes down to the element.
+    // 2. Target phase : the event reaches the target element.
+    // 3. Bubbling phase : the event bubbles up from the element.
+
+    // js event propagation can be controlled by using the event object.
+    // event.stopPropagation() : stops the event from bubbling up.
+    // event.stopImmediatePropagation() : stops the event from bubbling up and prevents other event handlers from being executed.
+
+    // 1. Capturing phase
+    document.getElementById("grandparent").addEventListener("click", () => console.log("grandparent"), true);
+    document.getElementById("parent").addEventListener("click", ()=> console.log("parent"), true);
+    document.getElementById("child").addEventListener("click",() => console.log("child"), true);
+
+    // 2. Bubbling phase
+    document.getElementById("grandparent").addEventListener("click", () => console.log("grandparent"));
+    document.getElementById("parent").addEventListener("click", () => console.log("parent"));
+    document.getElementById("child").addEventListener("click", () => console.log("child"));
+
+    // 3. stopPropagation : stops the event from bubbling up.
+    // document.getElementById("child").addEventListener("click", (event) => {
+    //     console.log("child");
+    //     event.stopPropagation();
+    // });
+</script>
+</html>
