@@ -1,0 +1,116 @@
+JavaScript Syllabus: Beginner to Advanced
+
+Module 1: Introduction to JavaScript (Beginner Level)
+
+Introduction to JavaScript
+    What is JavaScript?
+    Role of JavaScript in Web Development
+    JavaScript vs Other Programming Languages
+    Setting Up a JavaScript Environment (Browser Console, Code Editors)
+
+JavaScript Basics
+    Variables (var, let, const)
+    Data Types (String, Number, Boolean, Null, Undefined, Symbol, BigInt)
+    Operators (Arithmetic, Assignment, Comparison, Logical, Bitwise)
+    Comments in JavaScript
+
+Control Structures
+    Conditional Statements (if, else if, else, switch)
+    Loops (for, while, do-while)
+    Break and Continue Statements
+
+Functions & Scope
+    Function Declarations and Expressions
+    Arrow Functions
+    Parameters and Return Values
+    Default and Rest Parameters
+    Scope (Global, Local, Block)
+    Closures
+
+Module 2: Intermediate JavaScript
+
+Working with Arrays & Objects
+    Creating and Manipulating Arrays (push, pop, shift, unshift, splice, slice)
+    Array Iteration (map, filter, reduce, forEach, find, some, every)
+    Sorting and Searching in Arrays
+    Object Literals & Object Methods
+    Object Destructuring & Spread Operator
+
+ES6+ Features
+    let and const vs var
+    Template Literals
+    Destructuring Arrays and Objects
+    Spread and Rest Operators
+    Default Parameters
+    Modules (import & export)
+    Optional Chaining (?.)
+    Nullish Coalescing (??)
+
+DOM Manipulation & Events
+    Selecting Elements (getElementById, querySelector)
+    Modifying Elements (Text, Attributes, Classes, Styles)
+    Event Listeners & Handling Events
+    Event Propagation (bubbling, capturing, stopPropagation)
+    Creating and Removing Elements
+
+Error Handling & Debugging
+    try, catch, finally
+    Throwing Errors
+    Console Methods (log, error, warn, table, group)
+    Debugging in Chrome DevTools
+
+Module 3: Advanced JavaScript
+
+Asynchronous JavaScript
+    Callbacks and Callback Hell
+    Promises (Chaining, Error Handling)
+    async/await
+    Fetch API & HTTP Requests
+    Working with APIs (JSON & REST API)
+
+Object-Oriented Programming (OOP) in JavaScript
+    Constructor Functions & Prototypes
+    ES6 Classes
+    Inheritance and Super
+    Encapsulation & Private Methods
+    Static Methods & Getters/Setters
+
+JavaScript Modules & Tooling
+    ES6 Modules (import/export)
+    Webpack & Babel
+    NPM (Node Package Manager)
+    Parcel & Vite
+
+Functional Programming in JavaScript
+    Higher-Order Functions
+    Pure Functions
+    Immutability
+    Currying
+    Composition
+
+Module 4: Expert-Level JavaScript & Frameworks
+
+Advanced Topics
+    JavaScript Design Patterns
+    Web Workers & Service Workers
+    WebSockets & Real-Time Communication
+    Proxy & Reflect
+    Performance Optimization
+
+Working with Frontend Frameworks (React, Vue, Angular)
+    Basics of React (useState, useEffect)
+    Vue Basics (computed, watch, methods)
+    Introduction to Angular (Components, Services, Directives)
+
+Backend JavaScript (Node.js & Express.js)
+    Introduction to Node.js
+    File System (fs Module)
+    HTTP Server with Express.js
+    Working with Databases (MongoDB & MySQL)
+    Authentication & Security (JWT, OAuth)
+
+JavaScript Testing & Deployment
+    Unit Testing with Jest
+    End-to-End Testing with Cypress
+    CI/CD for JavaScript Applications
+    Deploying Apps on Vercel, Netlify, or AWS
